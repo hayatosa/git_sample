@@ -1,0 +1,261 @@
+Last login: Fri Feb  1 23:32:58 on ttys000
+hayato-MacBook-Pro:~ hayatosato$ mkdir git_sample
+hayato-MacBook-Pro:~ hayatosato$ pwd
+/Users/hayatosato
+hayato-MacBook-Pro:~ hayatosato$ cd git_sample
+hayato-MacBook-Pro:git_sample hayatosato$ pwd
+/Users/hayatosato/git_sample
+hayato-MacBook-Pro:git_sample hayatosato$ touch git_sample.html
+hayato-MacBook-Pro:git_sample hayatosato$ git init
+Initialized empty Git repository in /Users/hayatosato/git_sample/.git/
+hayato-MacBook-Pro:git_sample hayatosato$ ls
+git_sample.html
+hayato-MacBook-Pro:git_sample hayatosato$ git commit -m "add name to git_sample.html"
+[master (root-commit) a84fece] add name to git_sample.html
+ Committer: hayato sato <hayatosato@hayato-MacBook-Pro.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 git_sample.html
+hayato-MacBook-Pro:git_sample hayatosato$ git add .
+hayato-MacBook-Pro:git_sample hayatosato$ git commit -m "change message"
+On branch master
+nothing to commit, working tree clean
+hayato-MacBook-Pro:git_sample hayatosato$ git add .
+hayato-MacBook-Pro:git_sample hayatosato$ git commit -m"change message2"
+On branch master
+nothing to commit, working tree clean
+hayato-MacBook-Pro:git_sample hayatosato$ ls
+git_sample.html
+hayato-MacBook-Pro:git_sample hayatosato$ git status
+On branch master
+nothing to commit, working tree clean
+hayato-MacBook-Pro:git_sample hayatosato$ git log
+commit a84fecedd249efbd0a1aa7832173adfd62381531 (HEAD -> master)
+Author: hayato sato <hayatosato@hayato-MacBook-Pro.local>
+Date:   Fri Feb 1 23:41:49 2019 +0900
+
+    add name to git_sample.html
+hayato-MacBook-Pro:git_sample hayatosato$ git add .
+hayato-MacBook-Pro:git_sample hayatosato$ git commit -m "add message"
+On branch master
+hayato-MacBook-Pro:git_sample hayatosato$ git commit -m "add message to git_sample.html"
+On branch master
+nothing to commit, working tree clean
+hayato-MacBook-Pro:git_sample hayatosato$ git branch
+* master
+hayato-MacBook-Pro:git_sample hayatosato$ git checkout branch
+error: pathspec 'branch' did not match any file(s) known to git
+hayato-MacBook-Pro:git_sample hayatosato$ git checkout -b
+error: switch `b' requires a value
+hayato-MacBook-Pro:git_sample hayatosato$ git reset --hard origin/master
+fatal: ambiguous argument 'origin/master': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+hayato-MacBook-Pro:git_sample hayatosato$ git log
+commit a84fecedd249efbd0a1aa7832173adfd62381531 (HEAD -> master)
+Author: hayato sato <hayatosato@hayato-MacBook-Pro.local>
+Date:   Fri Feb 1 23:41:49 2019 +0900
+
+    add name to git_sample.html
+hayato-MacBook-Pro:git_sample hayatosato$ git add .
+hayato-MacBook-Pro:git_sample hayatosato$ git commit -m"reset"
+On branch master
+nothing to commit, working tree clean
+hayato-MacBook-Pro:git_sample hayatosato$ git status
+On branch master
+nothing to commit, working tree clean
+hayato-MacBook-Pro:git_sample hayatosato$ git init
+Reinitialized existing Git repository in /Users/hayatosato/git_sample/.git/
+hayato-MacBook-Pro:git_sample hayatosato$ git add .
+hayato-MacBook-Pro:git_sample hayatosato$ git commit -m "add message h2"
+On branch master
+nothing to commit, working tree clean
+hayato-MacBook-Pro:git_sample hayatosato$ git status
+On branch master
+nothing to commit, working tree clean
+hayato-MacBook-Pro:git_sample hayatosato$ git status
+On branch master
+nothing to commit, working tree clean
+hayato-MacBook-Pro:git_sample hayatosato$ git init
+Reinitialized existing Git repository in /Users/hayatosato/git_sample/.git/
+hayato-MacBook-Pro:git_sample hayatosato$ git branch --set-upstream-to origin/master
+error: the requested upstream branch 'origin/master' does not exist
+hint: 
+hint: If you are planning on basing your work on an upstream
+hint: branch that already exists at the remote, you may need to
+hint: run "git fetch" to retrieve it.
+hint: 
+hint: If you are planning to push out a new local branch that
+hint: will track its remote counterpart, you may want to use
+hint: "git push -u" to set the upstream config as you push.
+hayato-MacBook-Pro:git_sample hayatosato$ git status
+On branch master
+nothing to commit, working tree clean
+hayato-MacBook-Pro:git_sample hayatosato$ git add .
+hayato-MacBook-Pro:git_sample hayatosato$ git commit -m "add message"
+On branch master
+nothing to commit, working tree clean
+hayato-MacBook-Pro:git_sample hayatosato$ git show HEAD
+commit a84fecedd249efbd0a1aa7832173adfd62381531 (HEAD -> master)
+Author: hayato sato <hayatosato@hayato-MacBook-Pro.local>
+Date:   Fri Feb 1 23:41:49 2019 +0900
+
+    add name to git_sample.html
+
+diff --git a/git_sample.html b/git_sample.html
+new file mode 100644
+index 0000000..e69de29
+hayato-MacBook-Pro:git_sample hayatosato$ git show HEAD^
+fatal: ambiguous argument 'HEAD^': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+hayato-MacBook-Pro:git_sample hayatosato$ git status
+On branch master
+nothing to commit, working tree clean
+hayato-MacBook-Pro:git_sample hayatosato$ git checkout git_sample.html
+hayato-MacBook-Pro:git_sample hayatosato$ git add .
+hayato-MacBook-Pro:git_sample hayatosato$ git commit -m "add  h2 message"
+On branch master
+nothing to commit, working tree clean
+hayato-MacBook-Pro:git_sample hayatosato$ git log
+commit a84fecedd249efbd0a1aa7832173adfd62381531 (HEAD -> master)
+Author: hayato sato <hayatosato@hayato-MacBook-Pro.local>
+Date:   Fri Feb 1 23:41:49 2019 +0900
+
+    add name to git_sample.html
+hayato-MacBook-Pro:git_sample hayatosato$ git status
+On branch master
+nothing to commit, working tree clean
+hayato-MacBook-Pro:git_sample hayatosato$ git add .
+hayato-MacBook-Pro:git_sample hayatosato$ git commit -m "add message"
+On branch master
+nothing to commit, working tree clean
+hayato-MacBook-Pro:git_sample hayatosato$ git log
+commit a84fecedd249efbd0a1aa7832173adfd62381531 (HEAD -> master)
+Author: hayato sato <hayatosato@hayato-MacBook-Pro.local>
+Date:   Fri Feb 1 23:41:49 2019 +0900
+
+    add name to git_sample.html
+hayato-MacBook-Pro:git_sample hayatosato$ mkdir git_sample.html
+mkdir: git_sample.html: File exists
+hayato-MacBook-Pro:git_sample hayatosato$ cd desktop
+-bash: cd: desktop: No such file or directory
+hayato-MacBook-Pro:git_sample hayatosato$ mkdir git_sample.html
+mkdir: git_sample.html: File exists
+hayato-MacBook-Pro:git_sample hayatosato$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   git_sample.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+hayato-MacBook-Pro:git_sample hayatosato$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   git_sample.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+hayato-MacBook-Pro:git_sample hayatosato$ git add .
+hayato-MacBook-Pro:git_sample hayatosato$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   git_sample.html
+
+hayato-MacBook-Pro:git_sample hayatosato$ git commit -m "add first message"
+[master a1716f1] add first message
+ Committer: hayato sato <hayatosato@hayato-MacBook-Pro.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+hayato-MacBook-Pro:git_sample hayatosato$ git log
+commit a1716f1ae47f00c06d2b639d0b40f88109c6e555 (HEAD -> master)
+Author: hayato sato <hayatosato@hayato-MacBook-Pro.local>
+Date:   Sat Feb 2 01:22:12 2019 +0900
+
+    add first message
+
+commit a84fecedd249efbd0a1aa7832173adfd62381531
+Author: hayato sato <hayatosato@hayato-MacBook-Pro.local>
+Date:   Fri Feb 1 23:41:49 2019 +0900
+
+    add name to git_sample.html
+hayato-MacBook-Pro:git_sample hayatosato$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   git_sample.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+hayato-MacBook-Pro:git_sample hayatosato$ git add .
+hayato-MacBook-Pro:git_sample hayatosato$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   git_sample.html
+
+hayato-MacBook-Pro:git_sample hayatosato$ git commit -m"add 2nd message"
+[master 859bffe] add 2nd message
+ Committer: hayato sato <hayatosato@hayato-MacBook-Pro.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+hayato-MacBook-Pro:git_sample hayatosato$ git log
+commit 859bffedf61edb5d1176c9aff028d49e5c08176f (HEAD -> master)
+Author: hayato sato <hayatosato@hayato-MacBook-Pro.local>
+Date:   Sat Feb 2 01:23:50 2019 +0900
+
+    add 2nd message
+
+commit a1716f1ae47f00c06d2b639d0b40f88109c6e555
+Author: hayato sato <hayatosato@hayato-MacBook-Pro.local>
+Date:   Sat Feb 2 01:22:12 2019 +0900
+
+    add first message
+
+commit a84fecedd249efbd0a1aa7832173adfd62381531
+Author: hayato sato <hayatosato@hayato-MacBook-Pro.local>
+Date:   Fri Feb 1 23:41:49 2019 +0900
+
+    add name to git_sample.html
+hayato-MacBook-Pro:git_sample hayatosato$ 
